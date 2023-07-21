@@ -6,8 +6,83 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <title>애니메이션1</title>
+    <style>
+        #btn1 {
+            background:lavender;
+            width:500px; 
+            padding:30px;
+            /* transition:background 0.5s,width 0.8s; */
+            position:relative;
+            transition:all 0.5s; /* 지속시간이 모든 속성에 일치 할 때 */
+            letter-spacing: 2em;
+        }
+        #btn1:hover {
+            background: pink;
+            /* transition:애니메이션적용속성 지속시간; */
+            width:100px; 
+            padding:0;
+            position:absolute; left:100px;
+            letter-spacing:-0.02em;
+        }
+        #btn2 {
+            width:100px;
+            height:100px;
+            transition: width 0.5s ease 0.5s,height 2s linear 3s;
+        }
+        #btn2:hover {
+            width:200px;
+        }
+        /* trasform 연습 */
+        #btn3 {
+            padding:10px;
+        }
+        /* btn3에 마우스를 올렸을 때 그 형제 box가 변경된다. */
+        #btn3:hover ~.box {
+            /* background: pink;
+            transform: scaleY(2) scale(0.5); 1=100% */
+            /* trasnform:속성(값) 속성(값) */
+            /* trasnfrom 속성은 자식, 자손에게도 영향을 준다. */
+            /* transform:rotate(-60deg) scale(1.5); */
+            /* transform:skewY(60deg); */
+            transform:translateY(200px);
+        }
+        .box {transition:transform 0.5s;
+            width:100px; height:100px;
+            background:yellow;
+        }
+        #btn4 {}
+        #btn4:hover ~ .target {
+            transform:rotate(60deg);
+            transform-origin:left bottom;
+        }
+        .target {
+            display:block;
+            background:lavender;
+            width:50px; height:50px;
+            transition:all 0.5s;
+            
+        }
+    </style>
 </head>
 <body>
-    
+    <ul>
+        <li>
+            <button id="btn1">animation1</button>
+        </li>
+        <li>
+            <button type="button" id="btn2">animation2</button>
+        </li>
+        <li>
+            <button id="btn3" type="button">transform1</button>
+            <hr>
+            <div class="box">box</div>
+        </li>
+        <li>
+            <button id="btn4" type="button">transform2</button>
+            <hr>
+            <span class="target">적용대상</span>
+        </li>
+        <li></li>
+    </ul>
 </body>
 </html>
