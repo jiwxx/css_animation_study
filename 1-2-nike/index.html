@@ -26,11 +26,16 @@
             position:absolute; left:0; bottom:50px; width:100%;
             display:flex; justify-content: center;
         }
-        #v_btn a {
+        #v_btn a { 
             width:100px; margin:0 10px; 
-            display:flex; align-items:flex-end;
+            display:flex; align-items:flex-end; 
+            transition:transform 0.5s;
+            transform-origin:right bottom;
         }
         #v_btn a img {width:100%;}
+        #v_btn a:hover {transform:rotate(15deg);
+        }
+        
     </style>
     <script>
         window.onload=function(){
