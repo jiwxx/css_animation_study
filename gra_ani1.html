@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>text gradient animation</title>
+    <style>
+        #bg {
+            height: 500px;
+            background:linear-gradient(45deg,pink,lime,skyblue,orange);
+            background-size: 400%;
+            animation:bg 5s ease alternate infinite;
+        }
+        @keyframes bg {
+            0% {background-position: 0 0 ;}
+            100% {background-position: 100% 50% ;}
+        }
+        #btn1 {
+            width:200px; height: 100px;
+            background: linear-gradient(90deg,white,pink,black);
+            border:none;
+            border-radius: 10px;
+            background-size:400%;
+            transition:all 1s;
+        }
+        #btn1:hover {
+            background-position: 100% 0; color:#fff;
+        }
+        #btn2 {
+            
+            height:200px; width: 200px;
+            border-radius: 50%;
+            border:none;
+            background:radial-gradient(circle,black,pink,skyblue);
+            background-size: 200%;
+            color:#fff;
+            transition:all 1s;
+            background-position: center;
+        }
+        #btn2:hover {
+            background-position:100% 0; 
+            color:#000;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg"></div>
+    <button id="btn1" type="button">click here!</button>
+    <button id="btn2" type="button">click here!</button>
+</body>
+</html>
